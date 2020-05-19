@@ -4,7 +4,7 @@ const severeImpact = {};
 // CHALLENGE ONE
 
 const currentlyInfectedEstimate = (data) => {
-  // destructure reported cases from input data
+
   const { reportedCases, periodType } = data;
   let { timeToElapse } = data;
 
@@ -23,7 +23,7 @@ const currentlyInfectedEstimate = (data) => {
   // calculate currently infected individuals for impact object
   impact.currentlyInfected = reportedCases * 10;
 
-  // calculate projected number of infected individuals after estimate Time for impact object
+ 
   impact.infectionsByRequestedTime = Math.trunc(impact.currentlyInfected * (2 ** powerFactor));
 
   // calculate currently infected individuals for severe impact object
@@ -38,6 +38,7 @@ const currentlyInfectedEstimate = (data) => {
 const severeCasesByRequestedTime = (data) => {
   // destructure requested time from input data
   const { timeToElapse } = data;
+
 
   const powerFactor = Math.trunc(timeToElapse / 3);
 
