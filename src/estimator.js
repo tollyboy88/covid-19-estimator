@@ -1,5 +1,6 @@
 const impact = {};
 const severalImpact = {};
+
 const currentlyInfectedEstimate = (data) => {
     const { reportedCases, periodType } = data;
     let { timeToElapse } = data;
